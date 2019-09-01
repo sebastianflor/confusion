@@ -9,9 +9,8 @@ export default class Contact extends React.Component {
     }
 
     handleSubmit = (values) => {
-        // event.preventDefault();
-        alert('Current state: ' + JSON.stringify(values));
-        console.log('Current state: ' + JSON.stringify(values));
+        alert('Thank you for your Feedback:\n' + JSON.stringify(values));
+        this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contacType, values.message);
         this.props.resetFeedbackForm();
     }
 
